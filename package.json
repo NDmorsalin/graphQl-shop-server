@@ -19,5 +19,8 @@
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
