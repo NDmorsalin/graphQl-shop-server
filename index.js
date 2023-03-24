@@ -39,7 +39,7 @@
 
         // use cors for cors origins policy
         app.use(cors({
-            origin: ['http://localhost:5500/'],
+            origin: "*",
             credentials: true,
         }))
         // parsing requests body data
@@ -48,15 +48,16 @@
         app.use(cookieParser(process.env.COOKIE_SECRET))
 
         app.use(bodyParser.urlencoded({ extended: true }))
+
+        const port = process.env.PORT || 4000;
+
         app.use(
             '/',
             expressMiddleware(server, {
                 context: async ({ req, res }) => ({ req, res }),
             }),
         );
-        const port = process.env.PORT || 4000;
         await new Promise((resolve) => httpServer.listen({ port }, resolve));
-
         console.log(`🚀 Server ready at http://localhost:${port}/`);
     }
 )()
