@@ -50,7 +50,7 @@
         app.use(bodyParser.urlencoded({ extended: true }))
 
         const port = process.env.PORT || 4000;
-
+    console.log(process.env.UI_ORIGIN)
         app.use(
             '/',
             expressMiddleware(server, {
