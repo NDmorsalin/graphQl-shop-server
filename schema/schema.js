@@ -164,7 +164,8 @@ const resolvers = {
           expires: new Date(Date.now() + 8 * 3600000),// cookie will be removed after 8 hours
           httpOnly: true,
           signed: true,
-          secure: true
+          secure: true,
+          domain:'http://localhost:5173'//it is for local frontend
         })
 
         return user
