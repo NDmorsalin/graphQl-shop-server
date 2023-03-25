@@ -39,7 +39,7 @@
 
         // use cors for cors origins policy
         app.use(cors({
-            origin: [process.env.UI_ORIGIN],
+            origin: process.env.UI_ORIGIN,
             credentials: true,
         }))
         // parsing requests body data
